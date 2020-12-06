@@ -20,3 +20,27 @@ TEST(TicTacToeBoardTest, unitTestName)
 	ASSERT_TRUE(true);
 }
 */
+
+TEST(TicTacToeBoardTest, checkWinner)
+{
+	TicTacToeBoard T;	
+	bool check;
+	if(T.getWinner() == X || T.getWinner() == O)
+	{
+		check = true;
+	}
+	ASSERT_FALSE(check);
+}
+
+TEST(TicTacToeBoardTest, toggleTurnOTest)
+{
+	TicTacToeBoard T;
+	ASSERT_TRUE(O == T.toggleTurn());
+}
+
+TEST(TicTacToeBoardTest, toggleTurnXTest)
+{
+	TicTacToeBoard T;
+	T.toggleTurn();
+	ASSERT_TRUE(X == T.toggleTurn());
+}
